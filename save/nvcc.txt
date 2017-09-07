@@ -1,0 +1,28 @@
+nvcc.exe
+--include-path
+"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/include","C:/Program Files (x86)/Windows Kits/10/Include/10.0.14393.0/ucrt",
+"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include/",
+"C:/opencv/build/include",
+"C:/opencv/build/include/opencv"
+--library-path
+"C:/opencv/build/x64/vc14/lib"
+-O3
+-m64
+-gencode
+arch=compute_61,code=sm_61
+--resource-usage
+-ccbin
+"C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin"
+--ptxas-options
+-warn-spills,-fmad=false
+-D__CUDACC__
+-DNVCC
+--compiler-options
+\"/DWIN32\",\"/D_WINDOWS\",\"/W3\",\"/GR\",\"/EHsc\",\"/MD\",\"/O2\",\"/DNDEBUGa,/std:c++latest\"
+hello.cu
+-o
+bin/hello.exe
+
+nvcc -arch=sm_61 --resource-usage --ptxas-options -warn-spills,-fmad=false -Xcompiler /LD,/O2,/W3,/std:c++latest kernel.cu kernel2.cu -o bin/k.dll
+
+check whether __CUDACC__ and NVCC are necessary definitions

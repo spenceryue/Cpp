@@ -1,0 +1,42 @@
+Build started: Project: PS2_Blur, Configuration: Release x64 ------
+
+Building NVCC (Device) object CMakeFiles/PS2_Blur.dir/src/Release/PS2_Blur_generated_student_func.cu.obj
+
+-- Removing C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/Release/PS2_Blur_generated_student_func.cu.obj
+
+"C:/Program Files/CMake/bin/cmake.exe" -E remove "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/Release/PS2_Blur_generated_student_func.cu.obj"
+
+-- Generating dependency file: C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.NVCC-depend
+
+"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/bin/nvcc.exe" -M -D__CUDACC__ "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/src/student_func.cu" -o "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.NVCC-depend" -ccbin "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin" -m64 -Xcompiler ,\"/DWIN32\",\"/D_WINDOWS\",\"/W3\",\"/GR\",\"/EHsc\",\"/MD\",\"/O2\",\"/Ob2\",\"/DNDEBUGa\",\"/Oi\" -gencode arch=compute_61,code=sm_61 --ptxas-options=-v -fmad=false -DNVCC "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include" -IC:/opencv/build/include -IC:/opencv/build/include/opencv
+
+student_func.cu
+
+-- Generating temporary cmake readable file: C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp
+
+"C:/Program Files/CMake/bin/cmake.exe" -D "input_file:FILEPATH=C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.NVCC-depend" -D "output_file:FILEPATH=C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp" -D verbose=ON -P "C:/Program Files/CMake/share/cmake-3.9/Modules/FindCUDA/make2cmake.cmake"
+
+-- Copy if different C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp to C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend
+
+"C:/Program Files/CMake/bin/cmake.exe" -E copy_if_different "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp" "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend"
+
+-- Removing C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp and C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.NVCC-depend
+
+"C:/Program Files/CMake/bin/cmake.exe" -E remove "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.depend.tmp" "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/PS2_Blur_generated_student_func.cu.obj.NVCC-depend"
+
+-- Generating C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/Release/PS2_Blur_generated_student_func.cu.obj
+
+"C:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/bin/nvcc.exe" "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/src/student_func.cu" -c -o "C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/CMakeFiles/PS2_Blur.dir/src/Release/PS2_Blur_generated_student_func.cu.obj" -ccbin "C:/Program Files (x86)/Microsoft Visual Studio 14.0/VC/bin" -m64 -Xcompiler ,\"/DWIN32\",\"/D_WINDOWS\",\"/W3\",\"/GR\",\"/EHsc\",\"/MD\",\"/O2\",\"/Ob2\",\"/DNDEBUGa\",\"/Oi\" -gencode arch=compute_61,code=sm_61 --ptxas-options=-v -fmad=false -DNVCC "-IC:/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include" -IC:/opencv/build/include -IC:/opencv/build/include/opencv
+
+
+
+Build started: Project: PS2_Blur, Configuration: Release x64 ------
+1>  main.cpp
+1>c:\opencv\build\include\opencv2\flann\logger.h(66): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+1>  C:\Program Files (x86)\Windows Kits\10\Include\10.0.14393.0\ucrt\stdio.h(207): note: see declaration of 'fopen'
+1>c:\users\spenc\onedrive\documents\summer 2017\cs 344\problem set 2\src\HW2.h(107): warning C4267: 'argument': conversion from 'size_t' to 'int', possible loss of data
+1>C:\Users\spenc\OneDrive\Documents\Summer 2017\CS 344\Problem Set 2\src\main.cpp(50): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+1>C:\Users\spenc\OneDrive\Documents\Summer 2017\CS 344\Problem Set 2\src\main.cpp(66): warning C4267: '=': conversion from 'size_t' to 'int', possible loss of data
+1>     Creating library C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/Release/PS2_Blur.lib and object C:/Users/spenc/OneDrive/Documents/Summer 2017/CS 344/Problem Set 2/build/Release/PS2_Blur.exp
+1>  PS2_Blur.vcxproj -> C:\Users\spenc\OneDrive\Documents\Summer 2017\CS 344\Problem Set 2\bin\x64\Release\PS2_Blur.exe
+========== Build: 1 succeeded, 0 failed, 1 up-to-date, 0 skipped ==========

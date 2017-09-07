@@ -1,0 +1,1790 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"sublime",
+				"sublime_keymaps"
+			],
+			[
+				"use",
+				"use_custom_shortcuts"
+			],
+			[
+				"nae",
+				"namespace"
+			],
+			[
+				"shortcut",
+				"edit_shortcuts"
+			],
+			[
+				"edit_",
+				"edit_shortcuts"
+			],
+			[
+				"edit",
+				"edit_shortcuts"
+			],
+			[
+				"ju",
+				"Jupyter"
+			],
+			[
+				"load",
+				"load_ipython_extension"
+			],
+			[
+				"alt-",
+				"Alt-down"
+			],
+			[
+				"set",
+				"set_cell_text"
+			],
+			[
+				"rane",
+				"range10"
+			],
+			[
+				"ty",
+				"typename"
+			],
+			[
+				"wrap",
+				"wrap_references"
+			],
+			[
+				"unwrap",
+				"unwrap_references"
+			],
+			[
+				"refere",
+				"reference_wrapper"
+			],
+			[
+				"Iterables",
+				"RefQualifiedIterables"
+			],
+			[
+				"is",
+				"is_unused"
+			],
+			[
+				"index",
+				"index_sequence_for"
+			],
+			[
+				"tye",
+				"type_name"
+			],
+			[
+				"vec",
+				"vector\tstd::vector"
+			],
+			[
+				"copy",
+				"COPY_TEMPS"
+			],
+			[
+				"Itera",
+				"IteratorsCopy"
+			],
+			[
+				"print",
+				"print_tuple"
+			],
+			[
+				"bas",
+				"basic_ostream"
+			],
+			[
+				"type",
+				"type_name"
+			],
+			[
+				"for",
+				"forv\tVector For Loop"
+			],
+			[
+				"input",
+				"input_iterator_tag"
+			],
+			[
+				"in",
+				"inc\t#include \"…\""
+			],
+			[
+				"ic",
+				"inc\t#include \"…\""
+			],
+			[
+				"fals",
+				"false_type"
+			],
+			[
+				"num",
+				"number_of_seeds"
+			],
+			[
+				"unif",
+				"uniform_int_distribution"
+			],
+			[
+				"uni",
+				"uniform_int_distribution"
+			],
+			[
+				"random",
+				"random_device"
+			],
+			[
+				"us",
+				"unsigned"
+			],
+			[
+				"names",
+				"namespace"
+			],
+			[
+				"vecto",
+				"vector\tstd::vector"
+			],
+			[
+				"scoe",
+				"Scores"
+			],
+			[
+				"vector",
+				"vector\tstd::vector"
+			],
+			[
+				"is_",
+				"is_integral"
+			],
+			[
+				"this",
+				"this_thread"
+			],
+			[
+				"h",
+				"h_result"
+			],
+			[
+				"devic",
+				"device_number"
+			],
+			[
+				"x",
+				"x_mark"
+			],
+			[
+				"suce",
+				"success"
+			],
+			[
+				"buff",
+				"buffer_size"
+			],
+			[
+				"max",
+				"max_registers"
+			],
+			[
+				"throw",
+				"throw_err"
+			],
+			[
+				"ret",
+				"reinterpret_cast"
+			],
+			[
+				"static",
+				"static_cast"
+			],
+			[
+				"CUDevice",
+				"CUdeviceptr"
+			],
+			[
+				"hello",
+				"hello_test"
+			],
+			[
+				"name",
+				"namespace"
+			],
+			[
+				"exce",
+				"exception"
+			],
+			[
+				"Cuda",
+				"CudaException"
+			],
+			[
+				"forw",
+				"forward_list"
+			],
+			[
+				"Arg",
+				"ArgPairTypes"
+			],
+			[
+				"memcpy",
+				"memcpy2device"
+			],
+			[
+				"to",
+				"to_string"
+			],
+			[
+				"func",
+				"func_name"
+			],
+			[
+				"CUDE",
+				"CUdeviceptr"
+			],
+			[
+				"deiv",
+				"device_pointer"
+			],
+			[
+				"devci",
+				"device_ptr_ptr"
+			],
+			[
+				"devi",
+				"device_pointer"
+			],
+			[
+				"do",
+				"do_exit"
+			],
+			[
+				"CUdev",
+				"CUdeviceptr"
+			],
+			[
+				"CUde",
+				"CUdeviceptr"
+			],
+			[
+				"size",
+				"size_t"
+			],
+			[
+				"CU",
+				"CUdeviceptr"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"base",
+				"basename"
+			],
+			[
+				"module",
+				"module_path"
+			],
+			[
+				"initi",
+				"initialized"
+			],
+			[
+				"const",
+				"constexpr"
+			],
+			[
+				"result",
+				"result_of_t"
+			],
+			[
+				"kernel",
+				"kernel_name"
+			],
+			[
+				"read",
+				"read_file"
+			],
+			[
+				"tictoc",
+				"TICTOC_DEFAULT"
+			],
+			[
+				"unit",
+				"unit_name"
+			],
+			[
+				"ticot",
+				"tictoc_ns"
+			],
+			[
+				"string",
+				"string_view"
+			],
+			[
+				"ptx",
+				"ptx_source"
+			],
+			[
+				"jit",
+				"jitOptions"
+			],
+			[
+				"what",
+				"what_arg"
+			],
+			[
+				"buf",
+				"buf_size"
+			],
+			[
+				"modul",
+				"module_path"
+			],
+			[
+				"mod",
+				"module_path"
+			],
+			[
+				"dev",
+				"dev"
+			],
+			[
+				"init",
+				"initialized"
+			],
+			[
+				"device",
+				"device_name"
+			],
+			[
+				"lamd",
+				"lambda"
+			],
+			[
+				"cuda",
+				"cuda_wrapper_t"
+			],
+			[
+				"block",
+				"blockDim"
+			],
+			[
+				"tic",
+				"tictoc"
+			],
+			[
+				"time",
+				"time_point"
+			],
+			[
+				"sleep",
+				"sleep_for"
+			],
+			[
+				"steady",
+				"steady_clock"
+			],
+			[
+				"tmp",
+				"tmpEnd"
+			],
+			[
+				"retore",
+				"restored"
+			],
+			[
+				"Redirect",
+				"Redirecter"
+			],
+			[
+				"sr",
+				"stringstream"
+			],
+			[
+				"has",
+				"has_void_return"
+			],
+			[
+				"TO",
+				"TO_LITERAL"
+			],
+			[
+				"err",
+				"err_msg"
+			],
+			[
+				"char_",
+				"chars_read"
+			],
+			[
+				"chars",
+				"chars_read"
+			],
+			[
+				"sqrt",
+				"sqrt_N"
+			],
+			[
+				"zip",
+				"zipcode"
+			],
+			[
+				"output",
+				"output_fields"
+			],
+			[
+				"b",
+				"border"
+			],
+			[
+				"sear",
+				"search_field"
+			],
+			[
+				"tran",
+				"transform"
+			],
+			[
+				"transfo",
+				"transform-origin"
+			],
+			[
+				"tranfor",
+				"transform"
+			],
+			[
+				"logo",
+				"logo_text"
+			],
+			[
+				"a",
+				"auto"
+			],
+			[
+				"fle",
+				"flex-start"
+			],
+			[
+				"no",
+				"nowrap"
+			],
+			[
+				"borderradiu",
+				"border-radius"
+			],
+			[
+				"trans",
+				"transition"
+			],
+			[
+				"space",
+				"space-between"
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"need",
+				"need_allocation"
+			],
+			[
+				"thread",
+				"threadIdx"
+			],
+			[
+				"CMAKE_CURRENT",
+				"CMAKE_CURRENT_LIST_DIR"
+			],
+			[
+				"PROJECT_NAME",
+				"CMAKE_PROJECT_NAME"
+			],
+			[
+				"CUDANVCCFL",
+				"CUDA_NVCC_FLAGS_RELEASE"
+			],
+			[
+				"findpackage",
+				"find_package"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/sum_arrays_timed.cu",
+			"settings":
+			{
+				"buffer_size": 4219,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cuda_context.h",
+			"settings":
+			{
+				"buffer_size": 17846,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cu.bat",
+			"settings":
+			{
+				"buffer_size": 321,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/cuda.h",
+			"settings":
+			{
+				"buffer_size": 464877,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/get_random.h",
+			"settings":
+			{
+				"buffer_size": 3496,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/zip.h",
+			"settings":
+			{
+				"buffer_size": 9505,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/range.h",
+			"settings":
+			{
+				"buffer_size": 6804,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/wrap_references.h",
+			"settings":
+			{
+				"buffer_size": 2058,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "Packages/LaTeXTools/LaTeX.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					""
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/Hello World.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/Hello World.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/Hello World.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					""
+				],
+				[
+					"Packages/CUDA C++/cuda-c++.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/CUDA C++/cuda-c++.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					""
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Traditional"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - PdfLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - XeLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Basic Builder - LuaLaTeX"
+				],
+				[
+					"Packages/LaTeXTools/LaTeX.sublime-build",
+					"Script Builder"
+				]
+			],
+			[
+				"Packages/LaTeXTools/LaTeX.sublime-build",
+				"PdfLaTeX"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 203.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rename",
+				"File: Rename"
+			],
+			[
+				"sspy",
+				"Set Syntax: Python"
+			],
+			[
+				"convert",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"renam",
+				"File: Rename"
+			],
+			[
+				"rena",
+				"File: Rename"
+			],
+			[
+				"ssjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"rein",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reinden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"prv",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"dele",
+				"File: Delete"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"delete",
+				"File: Delete"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install pac\t",
+				"Package Control: Install Package"
+			],
+			[
+				"settings",
+				"Preferences: Settings"
+			],
+			[
+				"convert ",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"reindent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"prov",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"tabs",
+				"Indentation: Convert to Tabs"
+			],
+			[
+				"latextool",
+				"LaTeXTools: Check system"
+			],
+			[
+				"latex",
+				"Set Syntax: LaTeX"
+			],
+			[
+				"prvo",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"rena\t",
+				"File: Rename"
+			],
+			[
+				"package",
+				"Package Control: List Packages"
+			],
+			[
+				"packremove",
+				"Package Control: Remove Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"rename\t",
+				"File: Rename"
+			],
+			[
+				"renm",
+				"File: Rename"
+			],
+			[
+				"sscuda",
+				"Set Syntax: CUDA C++"
+			],
+			[
+				"provo",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"cuda",
+				"Set Syntax: CUDA C++"
+			],
+			[
+				"upgra",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"update",
+				"Package Control: Upgrade/Overwrite All Packages"
+			],
+			[
+				"sscud",
+				"Set Syntax: CUDA C++"
+			],
+			[
+				"ssc++",
+				"Set Syntax: C++"
+			],
+			[
+				"pr",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"indent",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"renma",
+				"File: Rename"
+			],
+			[
+				"ren",
+				"File: Rename"
+			],
+			[
+				"packageinsta",
+				"Package Control: Install Package"
+			],
+			[
+				"prvop",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"installpacka",
+				"Package Control: Install Package"
+			],
+			[
+				"package rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"prvopen",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"instll packa",
+				"Package Control: Install Package"
+			],
+			[
+				"renam\t",
+				"File: Rename"
+			],
+			[
+				"ren\t",
+				"File: Rename"
+			],
+			[
+				"disable",
+				"Package Control: Disable Package"
+			],
+			[
+				"sspython",
+				"Set Syntax: Python"
+			],
+			[
+				"convert space",
+				"Indentation: Convert to Spaces"
+			],
+			[
+				"sscmak",
+				"Set Syntax: CMakeEditor"
+			],
+			[
+				"ssplain",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"sscmake",
+				"Set Syntax: CMakeEditor"
+			],
+			[
+				"cmake",
+				"Set Syntax: CMakeEditor"
+			],
+			[
+				"sspl",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ssc",
+				"Set Syntax: CUDA C++"
+			],
+			[
+				"",
+				"Build: New Build System"
+			],
+			[
+				"sscu",
+				"Set Syntax: CUDA C++"
+			],
+			[
+				"ss c",
+				"Set Syntax: C"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Remove Package"
+			],
+			[
+				"increme",
+				"Increment Selection"
+			],
+			[
+				"install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"ssyp",
+				"Set Syntax: Python"
+			],
+			[
+				"packainsta",
+				"Package Control: Install Package"
+			],
+			[
+				"ss jav",
+				"Set Syntax: Java"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"syntax sass",
+				"Set Syntax: Sass"
+			],
+			[
+				"package control instal",
+				"Package Control: Install Package"
+			],
+			[
+				"ssp",
+				"Preferences: Settings – Syntax Specific"
+			],
+			[
+				"pakage install pack",
+				"Package Control: Install Package"
+			],
+			[
+				"pakage",
+				"Install Package Control"
+			]
+		],
+		"width": 816.0
+	},
+	"console":
+	{
+		"height": 216.0,
+		"history":
+		[
+			"40*1024/25",
+			"a.geturl()",
+			"a= parse.urlparse(\"htadftp://google.com/helloworld/yes.html\")",
+			"a.geturl()",
+			"a= parse.urlparse(\"http://google.com/helloworld/yes.html\")",
+			"a.geturl()",
+			"a.count(12)",
+			"a.count(1)",
+			"dir(a.count)",
+			"help(a.count)",
+			"a.count()",
+			"a.count",
+			"a= parse.urlparse(\"http://google.com\")",
+			"dir(_)",
+			"_",
+			"parse.urlparse(\"http://google.com\")",
+			"globals()",
+			"parse.urlparse(\"https://computing.llnl.gov/tutorials/parallel_comp/\").geturl",
+			"parse.urlparse(\"https://computing.llnl.gov/tutorials/parallel_comp/\").netloc",
+			"dir(parse.urlparse(\"https://computing.llnl.gov/tutorials/parallel_comp/\"))",
+			"parse.urlparse(\"https://computing.llnl.gov/tutorials/parallel_comp/\")",
+			"from urllib import parse",
+			"del(urlparse)",
+			"delete urlparse",
+			"urlparse(\"https://computing.llnl.gov/tutorials/parallel_comp/\")",
+			"from urllib.parse import urlparse",
+			"dir(sys)",
+			"globals()",
+			"del(timings,time)",
+			"globals()",
+			"del(a)",
+			"delete a",
+			"globals()",
+			"dir(sys)",
+			"help(argv)",
+			"sys.help()",
+			"sys.argv.help()",
+			"help(sys)",
+			"help(sys.argv)",
+			"import sys",
+			"dir(str)",
+			"dir(str.decode)",
+			"dir(decode)",
+			"help str.decode",
+			"help (str.decode)",
+			"a.pop()",
+			"a =[]",
+			"a =[",
+			"a.pop()",
+			"a = []",
+			"timings = []",
+			"a",
+			"a.pop()",
+			"a=[1,2]",
+			"time.clock()",
+			"time.gmtime(0)",
+			"import time",
+			"import scrape_to_csv",
+			"%run scrape_to_csv",
+			"%run scrape_to_csv.py",
+			"a = input('hello')",
+			"print(a)",
+			"a+=2",
+			"a = 1",
+			"list(zip([1,2,3],[['a',1],['b',2],['c',3]]))",
+			"' '.join(['adf',3])",
+			"url",
+			"address = '2525 W Anderson Ln, Austin, TX 78757'",
+			"def myfunc(a):\\ a=2\\ return a",
+			"def myfunc(a):\\a=2\\return a",
+			"def myfunc(a):",
+			"' '.join(['adf','adf'])",
+			"'error code {:d}'.format(404)",
+			"'adsadgagd'[2+4:10]",
+			"'adsadgagd'[2+4:9]",
+			"'adsfsd'.find('s',3)",
+			"'adsfsd'.find('s',2)",
+			"'adsfsd'[:'adsfsd'.index('fsd')]",
+			"'adsfsd'['adsfsd'.index('fsd')]",
+			"'adsfsd'[index('fsd')]",
+			"'adsfsd'.substr(index('fsd'))",
+			"'adsfsd'.index('fsd')",
+			"'a df\\nadf'.split('\\n')",
+			"'a df\\nadf'.split()",
+			"'adf adf'.split()",
+			"from subprocess import run",
+			"subprocess.run(['cmake','--version'],stdout=subprocess.PIPE)",
+			"os.system(\"cmake --version\")",
+			"import os",
+			"call(['cmake','--version'],stdout=subprocess.PIPE)",
+			"import subprocess",
+			"call(['cmake','--version'],stdout=subprocess.PIPE)",
+			"stout,other = call(['cmake','--version'])",
+			"call(['cmake','--version'])",
+			"from subprocess import call",
+			"print('hi')",
+			"dir",
+			"ls"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/spenc/Desktop/test.py",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/379K/HW1.tex",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/M367K/function.tex",
+		"/C/Users/spenc/Anaconda3/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-notebook.mplstyle",
+		"/C/Users/spenc/OneDrive/Programming/apps to make.txt",
+		"/C/Users/spenc/.matplotlib/matplotlibrc",
+		"/C/Users/spenc/Anaconda3/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn-colorblind.mplstyle",
+		"/C/Users/spenc/Anaconda3/Lib/site-packages/matplotlib/style/core.py",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/379K/PatientData.csv",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/sublime_keymap/sublime_keymap.js",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/custom.js/sublime_keymap.js",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/379K/.sublime_cell.py",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/custom.js/custom.js",
+		"/C/Users/spenc/.jupyter/custom/old_custom.js",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/custom.js/README.md",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/sublime_keymap/README.md",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/sublime_keymap/custom.yaml",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/379K/.sublime_cellnull.py",
+		"/C/Users/spenc/Desktop/root_env.yml",
+		"/C/Users/spenc/.jupyter/custom/custom_old.js",
+		"/C/Users/spenc/.jupyter/custom/less_old_custom.js",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/custom.js/custom.yaml",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/contrib_nbextensions_help_item/contrib_nbextensions_help_item.yaml",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/contrib_nbextensions_help_item/README.md",
+		"/C/Users/spenc/Anaconda3/share/jupyter/nbextensions/contrib_nbextensions_help_item/main.js",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/jupyter nbextensions.txt",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/shortcuts.20170903.ahk",
+		"/C/Users/spenc/.jupyter/jupyter_notebook_config.py",
+		"/C/Users/spenc/Desktop/test.ahk",
+		"/C/Users/spenc/Downloads/Accelerated Computing.ipynb",
+		"/C/ProgramData/jupyter/nbconfig/tree.json",
+		"/C/ProgramData/jupyter/nbconfig/terminal.json",
+		"/C/ProgramData/jupyter/nbconfig/notebook.json",
+		"/C/ProgramData/jupyter/nbconfig/edit.json",
+		"/C/ProgramData/jupyter/nbconfig/common.json",
+		"/C/Users/spenc/Anaconda3/share/jupyter/kernels/python3/kernel.json",
+		"/C/Users/spenc/Anaconda3/etc/jupyter/jupyter_notebook_config.json",
+		"/C/Users/spenc/Anaconda3/etc/jupyter/jupyter_nbconvert_config.json",
+		"/C/Users/spenc/.jupyter/custom/custom.js",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/379K/.edit_jupyter_cell.py",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/enumerate.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/range.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/zip.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/type_stuff.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/print_tuple.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/wrap_references.h",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/C++/Snippets/#ifndef-#define-#endif.sublime-snippet",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/t.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/is_valid.h",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/utility",
+		"/C/Users/spenc/.jupyter/custom/test.py",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/DeleteCurrentFile/DeleteCurrentFile.sublime-settings",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/User/DeleteCurrentFile.sublime-settings",
+		"/C/Users/spenc/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/#IfWinActive ahk_class CabinetWClass ; Windows Explorer\r\n    #Space",
+		"/C/Users/spenc/.jupyter/migrated",
+		"/C/Users/spenc/.jupyter/nbconfig/notebook.json",
+		"/C/Users/spenc/.jupyter/nbconfig/tree.json",
+		"/C/ProgramData/Anaconda3/Lib/site-packages/matplotlib/mpl-data/stylelib/seaborn.mplstyle",
+		"/C/Users/spenc/.jupyter/jupyter_notebook_config.json",
+		"/C/Users/spenc/.jupyter/jupyter_nbconvert_config.py",
+		"/C/Users/spenc/.jupyter/jupyter_nbconvert_config.json",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/new_range.h",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/tuple",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/print_vector.h",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/C++/Snippets/std-vector-(v).sublime-snippet",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/C++/Snippets/forv.sublime-snippet",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/well.h",
+		"/C/Users/spenc/OneDrive/Documents/Fall 2017/M367K/test.tex",
+		"/C/Users/spenc/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/CTAN",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/faces.h",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/CUDA C++/#ifndef-#define-#endif.sublime-snippet",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/C++/C++ Single File.sublime-build",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/check_signature.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/tictoc.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/report_errors.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_random.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/tee.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/redirector.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/argmax.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_print_tuple.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test.py",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/invoke.h",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/type_traits",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/basename.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/read_file.h",
+		"/C/Users/spenc/OneDrive/Documents/Passwords.txt",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/brainstorm_list_comp.cpp",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/uniform_int_dist.h",
+		"/C/Program Files/LLVM/include/clang-c/Documentation.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/dirname.bat",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_structured_bindings.cpp",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/bits/stl_algo.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_cumulative_sum.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/planning_sketch.cpp",
+		"/C/Users/spenc/OneDrive/Documents/MATLAB/hotpo_1.m",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cu.bat",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/.clang_complete",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/SFINAE.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/vectorAddDrv.cpp",
+		"/C/Users/spenc/AppData/Roaming/Sublime Text 3/Packages/CUDA C++/cuda-c++.sublime-build",
+		"/C/ProgramData/NVIDIA Corporation/CUDA Samples/v8.0/0_Simple/vectorAddDrv/bin/vectorAdd_kernel64.ptx",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/tic",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/error.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cubin/cuda_context.ptx",
+		"/C/ProgramData/NVIDIA Corporation/CUDA Samples/v8.0/0_Simple/vectorAddDrv/vectorAdd_kernel.cu",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/use_commas.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/print_err.h",
+		"/C/ProgramData/NVIDIA Corporation/CUDA Samples/v8.0/0_Simple/vectorAddDrv/vectorAddDrv.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/cuda.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/exit_err.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/environment.txt",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cuda_context.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_hello/main.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_hello/kernel2.cu",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_hello/kernel.cu",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/cpp -v.txt",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/bin/cuda_context.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/include/cuda.h",
+		"/C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include/vector_types.h",
+		"/C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include/host_defines.h",
+		"/C/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v8.0/include/builtin_types.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cuda.h",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/dev_null.h",
+		"/C/Users/spenc/OneDrive/Documents/Spring 2017/312/projects/8/main.cpp",
+		"/C/Users/spenc/OneDrive/Documents/Spring 2017/312/projects/8/main.hpp",
+		"/C/mingw64/lib/gcc/x86_64-w64-mingw32/7.1.0/include/c++/chrono",
+		"/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/test_chrono.cpp",
+		"/C/ProgramData/NVIDIA Corporation/CUDA Samples/v8.0/common/inc/helper_functions.h"
+	],
+	"find":
+	{
+		"height": 64.0
+	},
+	"find_in_files":
+	{
+		"height": 176.0,
+		"where_history":
+		[
+			"C:\\Users\\spenc\\OneDrive\\Documents\\Summer 2017\\C++",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			" :",
+			"std::declval<Iterables&>()",
+			"unwrap_references(",
+			"Iterables",
+			"HAS_TEMPS, ",
+			"class ...Iterables,",
+			"^(1/2)",
+			" + ",
+			".figsize",
+			"axes.labelsize",
+			"figure.figsize",
+			"Edit",
+			"next-cell",
+			"command-mode",
+			"ⓔ",
+			"ⓜ",
+			"e",
+			";\n",
+			"q",
+			"getPrefixedShortcutName",
+			"getShortcutName",
+			"`${prefix}:${name}`",
+			"{",
+			"`",
+			"${i}",
+			"`",
+			"${i}",
+			"input_prompt_number",
+			"\\n",
+			"\"",
+			"sublime_keymaps",
+			"zz",
+			"getName",
+			"add_shortcuts",
+			"${prefix}:${name}",
+			"Jupyter.notebook",
+			"output",
+			"my_edit_shortcuts",
+			"Jupyter.notebook.kernel",
+			";",
+			"edit :",
+			"help_index: 'zz',",
+			"},",
+			"help_index: 'zz',",
+			"(event) ",
+			"Manager",
+			" command",
+			"manager",
+			"edit",
+			"cell",
+			"edit_shortcuts",
+			"command_mode",
+			"edit_mode",
+			"namespace",
+			"'custom-js'",
+			"edit",
+			"edit_shortcuts",
+			"keyboard_manager",
+			"Jupyter.",
+			"edit_mode",
+			"command_shortcuts",
+			"edit_mode",
+			"edit_shortcuts",
+			"Jupyter.keyboard_manager.",
+			"edit_shortcuts",
+			"run-cell",
+			"output",
+			" (event)",
+			"IPython",
+			"add_shortcut(",
+			" : function",
+			", ",
+			" (",
+			"IPython",
+			"set_text",
+			"set_cell_text",
+			"msg",
+			"sublime_edited",
+			"output",
+			"Alt",
+			"d",
+			"load_ipython_extension",
+			"alt",
+			"[custom.js] loaded",
+			"                return false;",
+			"IPython",
+			"cmd",
+			"msg",
+			"cmd",
+			"ret",
+			"ime_edited",
+			"input",
+			"IPython",
+			"ht",
+			"jupyter-notebook:",
+			"edit",
+			" *    ",
+			"*     ",
+			", A",
+			" or WinActive(\"ahk_class #32770\")",
+			"return\n}\n",
+			" {\n",
+			" {",
+			"if WinActive",
+			"else i",
+			"\") or",
+			"File Explorer",
+			"WinActive ahk_exe",
+			"#IfWinActive",
+			"edit_jupyter_cell",
+			"HAS_TEMPS",
+			"I...>;",
+			"class ...Iterables",
+			"range",
+			"static ",
+			" && ",
+			"index",
+			"conditional_t",
+			"endl",
+			"type_name<decltype(current)>() << std::endl << std::endl;",
+			"HasTemporaries",
+			"bool HasTemporaries = ",
+			"bool HasTemporaries = true, ",
+			"KeepCopy",
+			"const ",
+			"type_name<decltype(*this)>()",
+			" __PRETTY_FUNCTION__",
+			"std::cout << std::endl <<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			";\n",
+			"q",
+			"\\\\n",
+			"throw_err",
+			"type_stuff.h",
+			"'",
+			"\"",
+			"&",
+			")",
+			"\\)",
+			"(",
+			"\\-",
+			"if",
+			"<div class='r-rectangle long-grey'>\n<div class='furniture'>\n\t<div class='r-rectangle-B'>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t</div>\n\t<div class='r-rectangle-L'>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t</div>\n\t<div class='r-rectangle-T'>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t\t<div class='box'>\n\t\t\t<div class='face s1'>1</div>\n\t\t\t<div class='face s2'>2</div>\n\t\t\t<div class='face s3'>3</div>\n\t\t\t<div class='face s4'>4</div>\n\t\t\t<div class='face s5'>5</div>\n\t\t\t<div class='face s6'>6</div>\n\t\t</div>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t</div>\n</div>\n</div>",
+			"<div class='r-rectangle furniture long-grey'>\n\t<div class='r-rectangle-B'>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t\t<div class='w-box'>\n\t\t\t<div class='w-face w-s1'>1</div>\n\t\t\t<div class='w-face w-s6'>6</div>\n\t\t\t<div class='w-face w-s2'>2</div>\n\t\t\t<div class='w-face w-s3'>3</div>\n\t\t\t<div class='w-face w-s4'>4</div>\n\t\t\t<div class='w-face w-s5'>5</div>\n\t\t</div>\n\t</div>\n\t<div class='r-rectangle-L'>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t</div>\n\t<div class='r-rectangle-T'>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t\t<div class='box'>\n\t\t\t<div class='face s1'>1</div>\n\t\t\t<div class='face s2'>2</div>\n\t\t\t<div class='face s3'>3</div>\n\t\t\t<div class='face s4'>4</div>\n\t\t\t<div class='face s5'>5</div>\n\t\t\t<div class='face s6'>6</div>\n\t\t</div>\n\t\t<div class='t-box'>\n\t\t\t<div class='t-face t-s1'>1</div>\n\t\t\t<div class='t-face t-s2'>2</div>\n\t\t\t<div class='t-face t-s3'>3</div>\n\t\t\t<div class='t-face t-s4'>4</div>\n\t\t\t<div class='t-face t-s5'>5</div>\n\t\t\t<div class='t-face t-s6'>6</div>\n\t\t</div>\n\t</div>\n</div>",
+			"calc(#{$1} * var(--RES))",
+			"calc(#{$1} * var(--RES));",
+			"<div class='hightable furniture long-rectangle'>\n\t\t<div style='transform-origin:0 0;transform: translateX(100%) rotate(90deg);transform-style: preserve-3d;'>\n\t\t\t\t<div class='box hightable-L'>\n\t\t\t\t\t<div class='face s1'>1</div>\n\t\t\t\t\t<div class='face s2'>2</div>\n\t\t\t\t\t<div class='face s3'>3</div>\n\t\t\t\t\t<div class='face s4'>4</div>\n\t\t\t\t\t<div class='face s5'>5</div>\n\t\t\t\t\t<div class='face s6'>6</div>\n\t\t\t\t</div>\n\t\t\t\t<div class='box hightable-R'>\n\t\t\t\t\t<div class='face s1'>1</div>\n\t\t\t\t\t<div class='face s2'>2</div>\n\t\t\t\t\t<div class='face s3'>3</div>\n\t\t\t\t\t<div class='face s4'>4</div>\n\t\t\t\t\t<div class='face s5'>5</div>\n\t\t\t\t\t<div class='face s6'>6</div>\n\t\t\t\t</div>\n\t\t\t\t<div class='box hightable-T'>\n\t\t\t\t\t<div class='face s1'>1</div>\n\t\t\t\t\t<div class='face s2'>2</div>\n\t\t\t\t\t<div class='face s3'>3</div>\n\t\t\t\t\t<div class='face s4'>4</div>\n\t\t\t\t\t<div class='face s5'>5</div>\n\t\t\t\t\t<div class='face s6'>6</div>\n\t\t\t\t</div>\n\t\t\t\t<div class='box hightable-U'>\n\t\t\t\t\t<div class='face s1'>1</div>\n\t\t\t\t\t<div class='face s2'>2</div>\n\t\t\t\t\t<div class='face s3'>3</div>\n\t\t\t\t\t<div class='face s4'>4</div>\n\t\t\t\t\t<div class='face s5'>5</div>\n\t\t\t\t\t<div class='face s6'>6</div>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>",
+			"-webkit-transform",
+			"\\u0060",
+			"* 24px",
+			"$\\1",
+			"'"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 5,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/sum_arrays_timed.cu",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2744,
+								2754
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CUDA C++/cuda-c++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cuda_context.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 17846,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4427,
+								4427
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CUDA C++/cuda-c++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/cu.bat",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 321,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Batch File/Batch File.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/save/cuda.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 464877,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								20984,
+								20984
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/get_random.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3081,
+								3081
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/zip.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4511,
+								4511
+							],
+							[
+								4539,
+								4539
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 4467.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/range.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								384,
+								384
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 338.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/C/Users/spenc/OneDrive/Documents/Summer 2017/C++/wrap_references.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2058,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1,
+								1
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 55.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 380.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.latextools":
+	{
+		"height": 310.0
+	},
+	"pinned_build_system": "",
+	"project": "",
+	"replace":
+	{
+		"height": 144.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 578.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 848.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 300.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
