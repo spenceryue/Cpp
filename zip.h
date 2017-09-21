@@ -13,7 +13,7 @@ namespace zip_ns {
 	constexpr bool VERBOSE = 1;
 }
 
-template <bool HAS_TEMPS = false, class LOOOOOOK = void, class ...Iterables>
+template <int HAS_TEMPS = 0, class LOOOOOOK = void, class ...Iterables>
 class zip
 {
 	template <class ...BeginIterators>
@@ -124,9 +124,7 @@ public:
 		return *this;
 	}
 
-	zip (const zip& copy) = delete;
-	zip (zip&& copy) = delete;
-	/*zip (const zip& copy) :
+	zip (const zip& copy) :
 	persist(copy.persist), current(copy.current), stop(copy.stop) {
 		if constexpr(zip_ns::VERBOSE)
 			std::cout << "zip COPIED!" << *this << std::endl << std::endl;
@@ -136,7 +134,7 @@ public:
 	persist(std::move(copy.persist)), current(std::move(copy.current)), stop(copy.stop) {
 		if constexpr(zip_ns::VERBOSE)
 			std::cout << "zip MOVED!" << *this << std::endl << std::endl;
-	}*/
+	}
 
 	/* Pretty print */
 	friend std::ostream& operator<< (std::ostream& output, const zip&) {
@@ -145,10 +143,10 @@ public:
 };
 
 /* Deduction guide */
-template <bool HAS_TEMPS = true, class LOOOOOOK = void, class ...Iterables, class ...I, std::enable_if_t<(std::is_rvalue_reference_v<I&&> || ...), int> =0>
+template <int HAS_TEMPS = 2, class LOOOOOOK = void, class ...Iterables, class ...I, std::enable_if_t<(std::is_rvalue_reference_v<I&&> || ...), int> =0>
 explicit zip (I&&... i) -> zip<HAS_TEMPS, std::tuple<std::remove_reference_t<decltype(wrap_references(std::declval<I>()))>...>, I...>;
 
-template <bool HAS_TEMPS = false, class LOOOOOOK = void, class ...Iterables, class ...I, std::enable_if_t<(!std::is_rvalue_reference_v<I&&> && ...), int> =0>
+template <int HAS_TEMPS = 0, class LOOOOOOK = void, class ...Iterables, class ...I, std::enable_if_t<(!std::is_rvalue_reference_v<I&&> && ...), int> =0>
 explicit zip (I&&... i) -> zip<HAS_TEMPS, std::tuple<std::remove_reference_t<decltype(wrap_references(std::declval<I>()))>...>, I...>;
 
 #endif /* ZIP_H */
@@ -188,7 +186,7 @@ int main(int argc, char* argv[]) try
 	cout << type_name<std::remove_reference_t<decltype(zip(c))>>() << endl;*/
 	// (void)zip(zip("hello"s,"world"s, a, to_string(__LINE__)));
 	// (void) zip(a, to_string(__LINE__));
-	(void) zip(a);
+	// (void) zip(a);
 	/*
 	auto range10 = range(10);
 	// (void) zip(range10, zip(range10, range10));

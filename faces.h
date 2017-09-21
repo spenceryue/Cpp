@@ -3,8 +3,6 @@
 #ifndef FACES_H
 #define FACES_H
 
-#include <string>
-
 
 #define pikachu "\n\
  █▀▀▄           ▄▀▀█\n\

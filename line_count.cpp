@@ -30,7 +30,7 @@ int main (int argc, char** argv)
 
 	ifstream input = (argc == 2) ?
 			ifstream(argv[1], ios::binary) :
-			ifstream("computing.llnl.gov.html", ios::binary);
+			ifstream("out/computing.llnl.gov.html", ios::binary);
 
 	/*
 	Candidate approaches:
@@ -39,7 +39,7 @@ int main (int argc, char** argv)
 		  (saves on sentry costruction)
 		> rdbuf() char pointer++					-implemented
 		> istream_iterator (++ ++..) (internally uses <<)
-		> istringstream 
+		> istringstream
 		> getline(source, dest, delimter)
 		> string, for(auto& i:input) ?
 	*/
@@ -47,7 +47,7 @@ int main (int argc, char** argv)
 	if (input.is_open())
 	{
 		char working[LINE_BUFFER];
-		
+
 		tictoc<method1>(input, working);
 
 		input.clear();
@@ -75,7 +75,7 @@ int main (int argc, char** argv)
 /* Use member function of ifstream, getline() */
 int method1(ifstream &input, char working[LINE_BUFFER])
 {
-	cout << "Method 1..." << endl;
+	cout << "Method 1...\n";
 
 	int count = 0;
 	while (!input.eof())
@@ -93,7 +93,7 @@ int method1(ifstream &input, char working[LINE_BUFFER])
 	if (input.gcount() > 0 && working[input.gcount()-1] != '\n')
 		// File did not end in blank new line (count it)
 		count++;
-	
+
 	cout << "Lines counted: " << use_commas(count) << endl;
 	return count;
 }
@@ -101,7 +101,7 @@ int method1(ifstream &input, char working[LINE_BUFFER])
 /* Use member function read() -- saves on sentry construction for lines less than LINE_BUFFER chars long */
 int method2(ifstream &input, char working[LINE_BUFFER])
 {
-	cout << "Method 2..." << endl;
+	cout << "Method 2...\n";
 
 	int count = 0;
 	while (!input.eof())
@@ -127,15 +127,15 @@ int method2(ifstream &input, char working[LINE_BUFFER])
 /* Use underlying filebuf buffer retrieved from rdbuf(), then sgetn() */
 int method3(ifstream &input, char working[LINE_BUFFER])
 {
-	cout << "Method 3..." << endl;
-	
+	cout << "Method 3...\n";
+
 	int count = 0,
 	chars_read = 0,
 	tmp = 0;
 
 	std::filebuf *pbuf = input.rdbuf();
 	// pbuf->pubseekoff(0, input.beg);	// this is what is called internally with input.seekg(0)
-	while (tmp = pbuf->sgetn(working,LINE_BUFFER))
+	while ((tmp = pbuf->sgetn(working,LINE_BUFFER)))
 	{
 		for (int i=0;
 			i<tmp;

@@ -1,7 +1,7 @@
 #ifndef RANGE_H
 #define RANGE_H
 
-#include <type_traits>		// std::enable_if_t, is_same_v, common_type_t, conditional_t
+#include <type_traits>		// std::enable_if_t, is_same_v, common_type_t, conditional_t, is_arithmetic_v
 #include <iterator>			// std::input_iterator_tag
 #include "report_errors.h"
 #include "type_stuff.h"
@@ -10,12 +10,7 @@
 #include <tuple>
 #include "print_tuple.h"
 #include <iostream>
-#include <utility>			// std::move
 
-
-namespace range_ns {
-	constexpr bool VERBOSE = 1;
-}
 
 template <bool is_unused = false, class T = char>
 class range
@@ -23,9 +18,8 @@ class range
 	T current;
 	const T stop;
 	const T step;
+	constexpr static struct null_sentinel {} sentinel{};
 	struct unused {~unused() {}};
-	struct null_sentinel {};
-	constexpr static null_sentinel sentinel{};
 
 public:
 	using iterator_category = std::input_iterator_tag;
@@ -34,77 +28,73 @@ public:
 	using pointer = T*;
 	using reference = T&;
 
-	auto operator* () const {
+	auto operator* () const
+	{
 		if constexpr (is_unused)
 			return unused{};
 		else
 			return current;
 	}
 
-	auto& operator++ () {
+	auto& operator++ ()
+	{
 		current += step;
 		return *this;
 	}
 
-	auto operator++ (int) {
+	auto operator++ (int)
+	{
 		range copy{*this};
 		current += step;
 		return copy;
 	}
 
 	template <class Any>
-	bool operator!= (const Any&) const {
+	bool operator!= (const Any&) const
+	{
 		return current < stop;
 	}
 
 	template <class Any>
-	bool operator== (const Any&) const {
+	bool operator== (const Any&) const
+	{
 		return current >= stop;
 	}
 
 	template <bool U = false, class A = int, class B = A, class C = A, std::enable_if_t<std::is_arithmetic_v<C>, int> =0>
-	explicit range (A start, B stop, C step = 1) :
+	explicit range (A start, B stop, C step = 1) : // Explicit prevents candidate interpretation as copy constructor during class template resolution
 	current(start), stop(stop), step(step)
 	{
 		if (step <= 0)
 			throw_err("Oh no! The step argument for range() should be positive.");
-
-		if constexpr (range_ns::VERBOSE)
-			std::cout << "MADE! " << *this << std::endl << std::endl;
 	}
 
 	template <bool U = false, class A = int, std::enable_if_t<std::is_arithmetic_v<A>, int> =0>
-	explicit range (A stop = 0) : // Explicit prevents candidate interpretation as copy constructor during class template resolution
-	range(0, stop) {}
+	explicit range (A stop = 0) :
+	range(0, stop)
+	{}
 
 	range (const range& copy) :
-	current(copy.current), stop(copy.stop), step(copy.step) {
-		if constexpr (range_ns::VERBOSE)
-			std::cout << "COPIED! " << *this << std::endl << std::endl;
-	}
+	current(copy.current), stop(copy.stop), step(copy.step)
+	{}
 
 	range (range&& other) noexcept :
-	current(std::move(other.current)), stop(other.stop), step(other.step) {
-		if constexpr (range_ns::VERBOSE)
-			std::cout << "MOVED! " << *this << std::endl << std::endl;
+	current(other.current), stop(other.stop), step(other.step)
+	{}
+
+	auto& begin ()
+	{
+		return *this;
 	}
 
-	auto&& begin () {
-		if constexpr (range_ns::VERBOSE)
-			std::cout << "range's begin() called." << std::endl;
-
-		return std::move(*this);
-	}
-
-	auto& end () const {
-		if constexpr (range_ns::VERBOSE)
-			std::cout << "range's end() called." << std::endl;
-
+	auto& end () const
+	{
 		return sentinel;
 	}
 
 	/* Pretty print */
-	friend std::ostream& operator<< (std::ostream& output, const range& R) {
+	friend std::ostream& operator<< (std::ostream& output, const range& R)
+	{
 		return output << type_name<range>() << std::tuple{R.current, R.stop, R.step};
 	}
 };
@@ -148,22 +138,18 @@ int main(int argc, char* argv[])
 	cout << range(10) << endl;
 	cout << type_name<decltype(range(10).end())>() << endl;
 
-	try {
+	try
+	{
 		cerr << "(Purposeful screw up)" << endl;
 		range(0,0,-1);
-	} catch (const std::exception& e) {
-		cerr << e.what() << endl;
 	}
+	catch (const std::exception& e)
+	{}
 
 
 	using T = unsigned long long;
 	constexpr T N = (INT_MAX-1);
-	// constexpr T N = 10;
-	// constexpr T N = 10;
 	cout << (void*)N << endl;
-	// cout << "Expect: " << (void*)(T)(((N-1)/2.0) * (N)) << endl;
-	// cout << "Expect: " << (void*)(T)(N/2) << endl;
-	// constexpr T N = 100;
 	cout << type_name<decltype(range(0,N,5))>() << "\n\n" <<endl;
 
 	tic();
@@ -174,7 +160,6 @@ int main(int argc, char* argv[])
 	tic();
 	for (auto i : range(0,25,3))
 		cout << "hi " << i << endl;
-		// cout << "maybe_unused \t" << type_name<decltype(i)>() << endl;
 	toc();
 
 	cout << endl << endl;
@@ -190,12 +175,9 @@ int main(int argc, char* argv[])
 	auto ranged = [=]
 	{
 		T result = 0;
-		for (auto i : range(0,N,5)) {
-			if (i%2)
-				result += i;
-			else
-				result -= i;
-			// cout << i << ": " << result << endl;
+		for (auto i : range(0,N,5))
+		{
+			result += (i%2) ? i : -i;
 		}
 		return result;
 	};
@@ -204,28 +186,24 @@ int main(int argc, char* argv[])
 	{
 		T result = 0;
 		for (T i=0; i<N; i+=5)
-			if (i%2)
-				result += i;
-			else
-				result -= i;
+			result += (i%2) ? i : -i;
 		return result;
 	};
 
 	auto stl = [=]
 	{
 		auto r = range(0,N,5);
-		return accumulate(begin(r), begin(r), T(0), [] (T result, T i)
+		return accumulate(r, r, T(0), [] (T result, T i)
 			{
-				return (i%2) ?
-				result + i :
-				result - i;
+				return (i%2) ? result + i : result - i;
 			});
 	};
 
 	std::unordered_map<int, string> names {{0, "Ranged"}, {1, "Traditional"}, {2, "STL Accumulate"}};
 	vector<double> times(3);
 	vector<double> score(3,0);
-	for (auto i : range<1>(3)) {
+	for (auto i : range<1>(3))
+	{
 		{
 			tic<0>();
 			T total = stl();

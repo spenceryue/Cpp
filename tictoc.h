@@ -8,93 +8,83 @@
 #include <chrono>				// std::chrono::steady_clock, std::chrono::duration
 #include <vector>				// std::vector
 
-#define TICTOC_DEFAULT_UNITS std::milli
+#define DEFAULT_UNITS std::milli
 
-template <bool print = true>
+template <bool PRINT = true>
 inline void tic();
 
-template <bool print = true, class units = TICTOC_DEFAULT_UNITS>
-inline double toc(bool cumulative = false);
+template <bool PRINT = true, class UNITS = DEFAULT_UNITS>
+inline double toc();
 
 namespace tictoc_ns {
 	using namespace std;
 	using namespace chrono;
-	vector<steady_clock::time_point> tics;
-	char save_fill = ' ';
-	steady_clock::time_point initial_reference;
+	using Point = steady_clock::time_point;
+
+	vector<Point> Tics;
+	Point start;
 	struct init {
 		init() {
-			tics.reserve(10);
+			Tics.reserve(10);
 			tic<0>();
 			toc<0>();
 		}
 	} run;
+	char save_fill = ' ';
 
-	template <class unit>
+	template <class UNITS>
 	constexpr std::string unit_name() {
-		if (is_same_v<unit, ratio<1,1>>)
-			return "sec";
-		else if (is_same_v<unit, milli>)
-			return "ms";
-		else if (is_same_v<unit, micro>)
-			return "μs";
-		else if (is_same_v<unit, nano>)
-			return "ns";
+		if (is_same_v<UNITS, ratio<1,1>>) 	return "sec";
+		else if (is_same_v<UNITS, milli>) 	return "ms";
+		else if (is_same_v<UNITS, micro>) 	return "μs";
+		else if (is_same_v<UNITS, nano>) 	return "ns";
 	}
 }
 
 
-template <bool verbose = true>
+template <bool PRINT = true>
 inline void tic()
 {
 	using namespace std;
 	using namespace chrono;
 	using namespace tictoc_ns;
-	if constexpr (verbose) {
+
+	if constexpr (PRINT)
 		save_fill = cout.fill();
-		cout
-		<< "\n"
-		<< right
-		<< setfill('-')
-		<< setw(30 + 12*tics.size())
-		<< "tic" << endl;
-	}
-	tics.push_back(steady_clock::now());
-	if (tics.size() == 1)
-		initial_reference = tics.front();
+
+	Tics.push_back(steady_clock::now());
+	start = Tics.back();
 }
 
 template
-<bool verbose = true,
-class units = TICTOC_DEFAULT_UNITS>
-inline double toc(bool cumulative)
+<bool PRINT = true,
+class UNITS = DEFAULT_UNITS>
+inline double toc()
 {
 	using namespace std;
 	using namespace chrono;
 	using namespace tictoc_ns;
-	steady_clock::time_point end = steady_clock::now();
-	
-	steady_clock::time_point start;
-	if (tics.empty() || cumulative) {
-		start = initial_reference;
-	}
-	else
-	{
-		start = tics.back();
-		tics.pop_back();
-	}
 
-	duration<double, units> elapsed = end - start;
+	if (!Tics.empty())
+		Tics.pop_back();
 
-	if constexpr (verbose)
+	Point end = steady_clock::now();
+	duration<double, UNITS> elapsed = end - start;
+
+	if constexpr (PRINT)
 	{
 		std::cout
 		<< std::right
-		<< setfill('-')
-		<< std::setw(30 + 12*tics.size())
-		<< "toc" << "\n"
+		<< setfill('.')
+		<< setw(30 + 22*Tics.size())
+		<< "elapsed:"
+		<< setfill(' ')
+		<< setw(10)
 		<< setprecision(9)
-		<< std::setw(27 + 12*tics.size()) << elapsed.count() << " " << unit_name<units>() << "\n" << std::endl;
+		<< elapsed.count()
+		<< setw(3)
+		<< unit_name<UNITS>()
+		<< "\n" << std::endl;
 		std::cout << std::setfill(save_fill);
 	}
 
@@ -103,82 +93,61 @@ inline double toc(bool cumulative)
 
 
 template
-<auto* func,
-class units = TICTOC_DEFAULT_UNITS,
+<
+size_t TIMES = 1,
+class UNITS = DEFAULT_UNITS,
+class Callable,
 class ...ArgTypes,
-class R = std::enable_if_t<	std::is_invocable_v<decltype(*func), ArgTypes...>,
-							std::invoke_result_t<decltype(*func), ArgTypes...>>>
-R tictoc(ArgTypes&&... args)			// by pointer (e.g. for function or functor pointers)
+class R = std::invoke_result_t<Callable, ArgTypes...>,
+std::enable_if_t<TIMES == 1, int> =0
+>
+R tictoc(Callable&& f, ArgTypes&&... args)
 {
 	using namespace std;
+
 	tic();
-	
-	if constexpr(is_void_v<R>)
+	if constexpr (is_void_v<R>)
 	{
-		(*func) (forward<ArgTypes>(args)...);
-		toc<true, units>();
+		f(forward<ArgTypes>(args)...);
+		toc<true, UNITS>();
 	}
 	else
 	{
-		auto&& result = (*func) (forward<ArgTypes>(args)...);
-		toc<true, units>();
-		return result;
+		auto&& result = f(forward<ArgTypes>(args)...);
+		toc<true, UNITS>();
+		return (R) result;
 	}
 }
 
 
 template
-<class Functor,
-class units = TICTOC_DEFAULT_UNITS,
+<
+size_t TIMES,
+class UNITS = DEFAULT_UNITS,
+class Callable,
 class ...ArgTypes,
-class R = std::enable_if_t<	std::is_default_constructible_v<Functor> &&
-							std::is_invocable_v<Functor, ArgTypes...>,
-							std::invoke_result_t<Functor, ArgTypes...>>>
-R tictoc(ArgTypes&&... args)			// by type (e.g. for functors)
+class R = std::invoke_result_t<Callable, ArgTypes...>,
+std::enable_if_t<(TIMES > 1), int> =0
+>
+R tictoc(Callable&& f, ArgTypes&&... args)
 {
 	using namespace std;
+
 	tic();
-	
-	if constexpr(is_void_v<R>)
+	if constexpr (is_void_v<R>)
 	{
-		Functor() (forward<ArgTypes>(args)...);
-		toc<true, units>();
+		f(forward<ArgTypes>(args)...);
+		toc<true, UNITS>();
 	}
 	else
 	{
-		auto&& result = Functor() (forward<ArgTypes>(args)...);
-		toc<true, units>();
+		auto&& result = f(forward<ArgTypes>(args)...);
+		toc<true, UNITS>();
 		return result;
 	}
 }
 
-
-template
-<class L,
-class units = TICTOC_DEFAULT_UNITS,
-class ...ArgTypes,
-class R = std::enable_if_t<!std::is_default_constructible_v<L> &&
-							std::is_invocable_v<L, ArgTypes...>,
-							std::invoke_result_t<L, ArgTypes...>>>
-R tictoc(L&& lambda, ArgTypes&&... args)			// by value (e.g. for lambdas)
-{
-	using namespace std;
-	tic();
-	
-	if constexpr(is_void_v<R>)
-	{
-		lambda(forward<ArgTypes>(args)...);
-		toc<true, units>();
-	}
-	else
-	{
-		auto&& result = lambda(forward<ArgTypes>(args)...);
-		toc<true, units>();
-		return result;
-	}
-}
-
-#undef TICTOC_DEFAULT_UNITS
+#undef DEFAULT_UNITS
 #endif /* TICTOC_H */
 
 
@@ -197,7 +166,7 @@ using namespace string_literals;
 using namespace this_thread;
 
 // From here: http://www.cplusplus.com/reference/thread/this_thread/sleep_for/
-string sleeping(int n) 
+string sleeping(int n)
 {
 	cout << "Countdown:\n";
 	for (int i=n; i>0; --i) {
@@ -227,11 +196,11 @@ int main(int argc, char* argv[])
 {
 	cout << argv[0] << " Starting...\n" << endl;
 
-	cout << "Testing function passed by pointer..." << tictoc<sleeping>(3) << endl << endl;
+	cout << "Testing function passed by pointer..." << tictoc(sleeping, 3) << endl << endl;
 	cout << "\n\n" << endl;
-	
+
 	cout << "Testing function passed by pointer (no args or return value)..." << endl;
-	tictoc<hello>();
+	tictoc(hello);
 	cout << "\n\n" << endl;
 
 
@@ -257,18 +226,18 @@ int main(int argc, char* argv[])
 		cout << "from within:\n\t" << a << endl;
 		return test_var;
 	};
-	decltype(auto) tv = tictoc(hi2,2);
+	decltype(auto) tv = tictoc(hi2, 2);
 	tv = -1;
 	cout << "Returning by reference...\ttest_var=" << test_var << " vs. tv=" << tv << endl;
 
 	cout << "Testing functor passed by pointer..." << endl;
-	cout << setprecision(2) << tictoc<&test_functor>(5.0) << endl;
+	cout << setprecision(2) << tictoc(test_functor, 5.0) << endl;
 	cout << "\n\n" << endl;
 
 
 	cout << "Testing functor passed by class type (and mixing/nesting tictoc call types)..." << endl;
 	tic();
-	cout << setprecision(2) << tictoc<functor>(5.0) << endl;
+	cout << setprecision(2) << tictoc(functor{}, 5.0) << endl;
 	toc();
 	cout << "\n" << endl;
 
@@ -276,13 +245,13 @@ int main(int argc, char* argv[])
 	cout << "Testing cumulative timing..." << endl;
 	tic();
 	cout << "tic #1" << endl;
-	toc(true);
+	toc();
 	cout << "tic #2" << endl;
-	toc(true);
+	toc();
 	cout << "tic #3" << endl;
-	toc(true);
+	toc();
 	cout << "tic #4" << endl;
-	toc(true);
+	toc();
 	cout << "tic #5" << endl;
 	toc();
 

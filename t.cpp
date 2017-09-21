@@ -6,6 +6,7 @@
 #include "print_tuple.h"
 #include "print_vector.h"
 #include "type_stuff.h"
+#include "basename.h"
 using namespace std;
 
 
@@ -19,7 +20,9 @@ struct A {
 	using type = int;
 } t;
 
-int main() {
+int main(int argc, char* argv[]) {
+	startup_msg(argv[0]);
+
 	test("i", "am", "a", "putzeroo", "!");
 
 	tuple<vector<string>> a;
