@@ -16,7 +16,7 @@ inline void tic();
 template <bool PRINT = true, class UNITS = DEFAULT_UNITS>
 inline double toc();
 
-namespace tictoc_ns {
+namespace tictoc_detail {
 	using namespace std;
 	using namespace chrono;
 	using Point = steady_clock::time_point;
@@ -47,7 +47,7 @@ inline void tic()
 {
 	using namespace std;
 	using namespace chrono;
-	using namespace tictoc_ns;
+	using namespace tictoc_detail;
 
 	if constexpr (PRINT)
 		save_fill = cout.fill();
@@ -63,7 +63,7 @@ inline double toc()
 {
 	using namespace std;
 	using namespace chrono;
-	using namespace tictoc_ns;
+	using namespace tictoc_detail;
 
 	if (!Tics.empty())
 		Tics.pop_back();

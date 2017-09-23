@@ -6,7 +6,7 @@
 #include <iterator>			// std::declval
 #include "is_valid.h"
 
-namespace argmax_ns {
+namespace argmax_detail {
 	template <class T>
 	using has_difference_operator = decltype(std::declval<T>() - std::declval<T>());
 
@@ -15,13 +15,13 @@ namespace argmax_ns {
 }
 
 
-template <class ForwardIt, std::enable_if_t< !is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, std::enable_if_t< !is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 constexpr size_t argmax (ForwardIt first, ForwardIt last)
 {
 	return std::max_element(first, last) - first;
 }
 
-template <class ForwardIt, std::enable_if_t< is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, std::enable_if_t< is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 size_t argmax (ForwardIt first, ForwardIt last)
 {
 	int index = 0;
@@ -38,12 +38,12 @@ size_t argmax (ForwardIt first, ForwardIt last)
 	return index;
 }
 
-template <class T, std::enable_if_t< is_valid_v<argmax_ns::is_iterable, T>,int> =0>
+template <class T, std::enable_if_t< is_valid_v<argmax_detail::is_iterable, T>,int> =0>
 constexpr size_t argmax (T& container) {
 	return argmax(std::begin(container), std::end(container));
 }
 
-template <class ForwardIt, class Compare, std::enable_if_t< is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, class Compare, std::enable_if_t< is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 constexpr size_t argmax(ForwardIt first, ForwardIt last, Compare cmp)
 {
 	return std::max_element(first, last, cmp) - first;
@@ -51,13 +51,13 @@ constexpr size_t argmax(ForwardIt first, ForwardIt last, Compare cmp)
 
 
 /* argmin */
-template <class ForwardIt, std::enable_if_t< !is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, std::enable_if_t< !is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 constexpr size_t argmin (ForwardIt first, ForwardIt last)
 {
 	return std::min_element(first, last) - first;
 }
 
-template <class ForwardIt, std::enable_if_t< is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, std::enable_if_t< is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 size_t argmin (ForwardIt first, ForwardIt last)
 {
 	int index = 0;
@@ -74,12 +74,12 @@ size_t argmin (ForwardIt first, ForwardIt last)
 	return index;
 }
 
-template <class T, std::enable_if_t< is_valid_v<argmax_ns::is_iterable, T>,int> =0>
+template <class T, std::enable_if_t< is_valid_v<argmax_detail::is_iterable, T>,int> =0>
 constexpr size_t argmin (T& container) {
 	return argmin(std::begin(container), std::end(container));
 }
 
-template <class ForwardIt, class Compare, std::enable_if_t< is_valid_v<argmax_ns::has_difference_operator, ForwardIt>,int> =0>
+template <class ForwardIt, class Compare, std::enable_if_t< is_valid_v<argmax_detail::has_difference_operator, ForwardIt>,int> =0>
 constexpr size_t argmin(ForwardIt first, ForwardIt last, Compare cmp)
 {
 	return std::min_element(first, last, cmp) - first;
@@ -115,7 +115,7 @@ int main(int argc, char* argv[])
 		}
 		cout << "\n" << endl;
 	}
-	
+
 
 	cout << "size: " << a.size() << endl;
 	cout << "argmax(a): " << argmax(a) << endl;

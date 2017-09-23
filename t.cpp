@@ -36,4 +36,7 @@ int main(int argc, char* argv[]) {
 	cout << a << endl;
 
 	cout << type_name<typename A::type>() << endl;
+
+	cout << ((-6)  % (5 ))<< endl;
+	cout << ((-6)  % (-5)) << endl;
 }

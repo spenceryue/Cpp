@@ -3,7 +3,7 @@
 #include <iostream> 			// std::cout, std::endl
 #include <type_traits> 			// std::true_type, false_type, invoke_result_t
 
-namespace is_valid_ns {
+namespace is_valid_detail {
 	template <template<class...> class, class = void, class...>
 	struct valid : std::false_type
 	{
@@ -18,12 +18,12 @@ namespace is_valid_ns {
 }
 
 template <template<class...> class Expression, class...T>
-constexpr auto is_valid_v = is_valid_ns::valid<Expression, void, T...>::value;
+constexpr auto is_valid_v = is_valid_detail::valid<Expression, void, T...>::value;
 
 template <class ...T, class Lambda>
 constexpr bool is_valid (Lambda c)
 {
-	using namespace is_valid_ns;
+	using namespace is_valid_detail;
 	return is_valid_v<std::invoke_result_t, Lambda, T...>;
 }
 
@@ -51,13 +51,13 @@ struct test
 int main(int argc, char* argv[])
 {
 	using namespace std;
-	using namespace is_valid_ns;
+	using namespace is_valid_detail;
 
 	auto hi = [] (auto&& ...x) -> decltype(((x.data()), ...)) {};
 	auto hi2 = [] (auto&& ...x) -> decltype(((x.begin()),...)) {};
 
 	cout << "Hello World!" << "\n" << endl;
-	
+
 	cout << left << /*boolalpha <<*/ setw(70) << setfill('.') << "accessing member function" << type_name<decltype(test::foo)>() << "\n" << endl;
 	cout << left << /*boolalpha <<*/ setw(70) << setfill('.') << "lambda_t<>" << is_valid_v<invoke_result_t, decltype(hi), string, vector<int>> << "\n" << endl;
 	cout << left << /*boolalpha <<*/ setw(70) << setfill('.') << "is_valid<string>(hi)" << is_valid<string>(hi) << "\n" << endl;

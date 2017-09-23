@@ -5,7 +5,7 @@
 #include "is_valid.h"
 
 
-namespace wrap_references_ns {
+namespace wrap_references_detail {
 	template <class T, class U = std::remove_reference_t<T>>
 	using has_type = typename U::type;
 }
@@ -20,13 +20,13 @@ T&& wrap_references(T&& rvalue) {
 	return std::forward<T>(rvalue); // forward rvalue along
 }
 
-template <class T, std::enable_if_t<is_valid_v< wrap_references_ns::has_type, T> &&
-												std::is_same_v<std::remove_reference_t<T>, std::reference_wrapper<wrap_references_ns::has_type<T>>>, int> =0>
+template <class T, std::enable_if_t<is_valid_v< wrap_references_detail::has_type, T> &&
+												std::is_same_v<std::remove_reference_t<T>, std::reference_wrapper<wrap_references_detail::has_type<T>>>, int> =0>
 typename T::type& unwrap_references(T wrapper) {
 	return wrapper; // unwrap reference_wrapper
 }
 
-template <class T, std::enable_if_t<!is_valid_v< wrap_references_ns::has_type, T>, int> =0>
+template <class T, std::enable_if_t<!is_valid_v< wrap_references_detail::has_type, T>, int> =0>
 T&& unwrap_references(T&& value) {
 	return std::forward<T>(value); // forward value along
 }

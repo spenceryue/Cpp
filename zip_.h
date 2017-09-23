@@ -9,9 +9,168 @@
 
 #include "type_stuff.h"
 
+
 namespace zip_detail {
-	constexpr bool VERBOSE = 1;
+	template
+	<
+		class ...Iterators
+	>
+	struct zip_iterator
+	{
+		using iterator_category = std::input_iterator_tag;
+		using value_type = std::tuple<typename Iterators::value_type...>;
+		using difference = void;
+		using pointer = value_type*;
+		using reference = value_type&;
+
+
+		tuple<Iterators...> current;
+
+
+		template
+		<
+			class ...T,
+		>
+		zip_iterator(T&&... i) :
+		current {i...}
+		{}
+
+
+		value_type operator* () const
+		{
+			return std::apply(
+				[] (auto&&... i)
+				{
+					return std::tuple{*i...};
+				},
+				current);
+		}
+
+
+		value_type& operator++ ()
+		{
+			std::apply(
+				[] (auto&&... i)
+				{
+					(++i, ...);
+				},
+				current);
+			return current;
+		}
+
+
+		value_type operator++ (int)
+		{
+			value_type copy(current);
+			std::apply(
+				[] (auto&&... i)
+				{
+					(++i, ...);
+				},
+				current);
+			return copy;
+		}
+
+
+		template
+		<
+			size_t... index
+		>
+		bool any_equal(const value_type& stop, std::index_sequence<index...>) const
+		{
+			return ((std::get<index>(current) == std::get<index>(stop)) || ...);
+		}
+
+
+		constexpr std::index_sequence_for<Iterators...> Indices {};
+
+
+		bool operator== (const zip_iterator&) const
+		{
+			return any_equal(Indices);
+		}
+
+
+		bool operator!= (const zip_iterator&) const
+		{
+			return !any_equal(Indices);
+		}
+	}
+
+
+	template
+	<
+		class T
+	>
+	auto filter_reference (T&& element)
+	{
+		if constexpr (std::is_lvalue_reference_v<T>)
+			return std::tie<T> (element);
+		else
+			return std::tuple<T> {element};
+	}
 }
+
+
+template
+<
+	class ...Iterables
+>
+class zip
+{
+	/*static constexpr std::index_sequence_for<Iterables...> indices{};
+
+	using Pack = decltype(
+					std::tuple_cat(
+						std::declval<
+							std::conditional_t<
+								std::is_lvalue_reference_v<Iterables>,
+									decltype(std::tie<Iterables>),
+									decltype(std::tuple<Iterables>)
+							>
+						>()
+						...
+					));*/
+	using Pack = decltype( tuple_cat( zip_detail::filter_reference( std::declval<Iterables&&>() )... ) );
+	Pack iterables;
+
+
+public:
+	template
+	<
+		class ...Iterables
+	>
+	explicit zip (Iterables&&... i) :
+	iterables { tuple_cat( zip_detail::filter_reference( std::forward<Iterables>(i) )... ) }
+	{}
+
+
+	template
+	<
+		class by,
+		size_t... index
+	>
+	bool get_iterator(std::index_sequence<index...>) const
+	{
+		return ;
+	}
+
+
+	constexpr std::index_sequence_for<Iterators...> Indices {};
+
+
+	auto begin ()
+	{
+		return zip_iterator {}
+	}
+
+
+	auto end ()
+	{
+
+	}
+}
+
 
 template <int HAS_TEMPS = 0, class LOOOOOOK = void, class ...Iterables>
 class zip
@@ -174,74 +333,7 @@ int main(int argc, char* argv[]) try
 	cout << pikachu << endl;
 	cout << "\n" << endl;
 
-	// (void)zip(range(0),zip(range(1),range(2)));
-	// (void)zip(zip("hello"s,"world"s, to_string(__LINE__)));
-	// auto a = zip("hi"s);
 	auto a = zip(range(0));
-	/*
-	auto b = string("hiii");
-	auto c = range(1);
-	cout << type_name<std::remove_reference_t<decltype(std::begin(std::declval<decltype(a)&>()))>>() << endl;
-	cout << type_name<std::remove_reference_t<decltype(std::begin(a))>>() << endl;
-	cout << type_name<std::remove_reference_t<decltype(zip(c))>>() << endl;*/
-	// (void)zip(zip("hello"s,"world"s, a, to_string(__LINE__)));
-	// (void) zip(a, to_string(__LINE__));
-	// (void) zip(a);
-	/*
-	auto range10 = range(10);
-	// (void) zip(range10, zip(range10, range10));
-	// (void)zip(range10,zip("hello"s,"world"s, to_string(__LINE__)));
-	// (void)zip(range(10),zip("hello"s,"world"s, to_string(__LINE__)));
-	cout << type_name<decltype(zip(zip("hello"s,"world"s, to_string(__LINE__))))>() << endl;
-
-
-	string a = "hello", b = "world", ab = a+b, c;
-
-	auto R = range<true,int>(10);
-	auto RR = range(5);
-	[[maybe_unused]] auto z2 = zip{R, RR};
-	[[maybe_unused]] auto z3 = zip{range<true,int>(10), RR};
-	[[maybe_unused]] auto z31 = zip{range<true,int>(10), range(5)};
-	[[maybe_unused]] auto z32 = zip{range<true,int>(10)};
-	[[maybe_unused]] auto z33 = zip{RR};
-	(void) zip{range<true,int>(10), RR};
-	cout << endl << endl << endl;
-	[[maybe_unused]] auto z34 = zip(range<true,int>(10), RR);
-	(void) zip(range<true,int>(10), RR);
-	[[maybe_unused]] auto z4 = zip{ab, c=to_string(__LINE__)};
-	[[maybe_unused]] auto z333 = zip(a+b, c=to_string(__LINE__));
-	[[maybe_unused]] auto [i0, i1] = *zip(a+b, c=to_string(__LINE__));
-	[[maybe_unused]] auto zz = zip{a, b, a, b, a, c=to_string(__LINE__)};
-
-	cout << i0 << '\t' << type_name<decltype(i0)>() << endl;
-	cout << i1 << '\t' << type_name<decltype(i1)>() << endl;
-	cout << "\n" << endl;
-
-	cout << type_name<decltype(zip{"hello"s,"world"s, to_string(__LINE__)})>() << endl;
-	cout << type_name<decltype(zip("hello"s,"world"s, to_string(__LINE__)))>() << endl;
-	cout << type_name<decltype(++zip("hello"s,"world"s, to_string(__LINE__)))>() << endl;
-	cout << type_name<decltype(zip("hello"s,"world"s, to_string(__LINE__)).begin())>() << endl;
-	cout << type_name<decltype(*zip{"hello"s,"world"s, to_string(__LINE__)})>() << endl;
-	cout << type_name<decltype(*zip("hello"s,"world"s, to_string(__LINE__)))>() << endl;
-	cout << type_name<decltype("hello"s)>() << endl;
-	cout << type_name<decltype(zip(zip("hello"s,"world"s, to_string(__LINE__))))>() << endl;
-	// cout << type_name<decltype(enumerate(zip("hello"s,"world"s, to_string(__LINE__))))>() << endl; // requires move/copy constructor
-	cout << "\n" << endl;
-
-	cout << type_name<decltype(range('a','a' + 10u))>() << endl;
-	cout << "\n" << endl;
-
-	for (auto [i, j, ignore] : zip{range(0,24,2), range('a','a' + 11u), to_string(__LINE__) + "                "s}) {
-		(void)ignore;
-		cout << "type of i: " << type_name<decltype(i)>() << endl;
-		cout << "type of j: " << type_name<decltype(j)>() << endl;
-		cout << i << ", " << (char) j << endl;
-	}
-	cout << "\n" << endl;
-
-	for (tuple<int,char,char>&& t : zip{range(0,24,2), range('a','a' + 11u), to_string(__LINE__) + "                  "s})
-		cout << t << endl;*/
-
 	return 0;
 } catch (...) {cout << blank_face << endl;return 1;}
 #endif

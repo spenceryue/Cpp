@@ -1,131 +1,171 @@
 #ifndef RANGE_H
 #define RANGE_H
 
-#include <type_traits>		// std::enable_if_t, is_same_v, common_type_t, conditional_t, is_arithmetic_v
+#include <type_traits>		// std::enable_if_t, common_type_t, conditional_t, is_arithmetic_v
 #include <iterator>			// std::input_iterator_tag
 #include "report_errors.h"
 #include "type_stuff.h"
 #include "faces.h"
 
-#include <tuple>
+#include <tuple>			// tuple
 #include "print_tuple.h"
-#include <iostream>
+#include <iostream>			// basic_ostream
 
 
-struct null_sentinel {} sentinel{};
+namespace range_detail
+{
+	struct Unused{~Unused() {}} unused;
+
+
+	template
+	<
+		bool IS_UNUSED = false,
+		class T = char
+	>
+	struct range_iterator
+	{
+		using iterator_category = std::input_iterator_tag;
+		using value_type = std::conditional_t<IS_UNUSED, Unused, T>;
+		using difference = void;
+		using pointer = value_type*;
+		using reference = value_type&;
+
+
+		T current;
+		const T stop;
+		const T step;
+		const bool INCREMENT;
+
+
+		range_iterator (T current, T stop, T step) :
+		current {current},
+		stop {stop},
+		step {step},
+		INCREMENT {step > 0}
+		{}
+
+
+		value_type operator* () const
+		{
+			if constexpr (IS_UNUSED)	return unused;
+			else						return current;
+		}
+
+
+		value_type& operator++ ()
+		{
+			current += step;
+			if constexpr (IS_UNUSED)	return unused;
+			else						return current;
+		}
+
+
+		value_type operator++ (int)
+		{
+			T copy {current};
+			current += step;
+			if constexpr (IS_UNUSED)	return unused;
+			else						return copy;
+		}
+
+
+		template
+		<
+			class Any
+		>
+		bool operator== (const Any&) const
+		{
+			if (INCREMENT)		return current >= stop;
+			else				return current <= stop;
+		}
+
+
+		template
+		<
+			class Any
+		>
+		bool operator!= (const Any&) const
+		{
+			if (INCREMENT)		return current < stop;
+			else				return current > stop;
+		}
+	};
+}
+
+
 template
 <
-	bool is_unused = false,
+	bool IS_UNUSED = false,
 	class T = char
 >
-class range
+struct range : public range_detail::range_iterator<IS_UNUSED, T>
 {
-	T current;
-	const T stop;
-	const T step;
-	struct unused {~unused() {}};
-
-public:
-	using iterator_category = std::input_iterator_tag;
-	using value_type = std::conditional_t<is_unused, unused, T>;
-	using difference = void;
-	using pointer = value_type*;
-	using reference = value_type&;
-
-	auto operator* () const
-	{
-		if constexpr (is_unused)
-			return unused{};
-		else
-			return current;
-	}
-
-	auto& operator++ ()
-	{
-		current += step;
-		return *this;
-	}
-
-	auto operator++ (int)
-	{
-		range copy{*this};
-		current += step;
-		return copy;
-	}
+	using range_iterator = range_detail::range_iterator<IS_UNUSED, T>;
 
 	template
 	<
-		class Any
+		class A,
+		class B,
+		class C = B,
+		class Common = std::common_type_t<A,B,C>,
+		std::enable_if_t<std::is_arithmetic_v<Common>, int> =0
 	>
-	bool operator== (const Any&) const
+	explicit range (A start, B stop, C step = 1) :
+	range_iterator (start, stop, step)
 	{
-		return current >= stop;
+		if (this->step == 0)									throw_err(type_name<range>() + ": invalid argument error: step == 0");
+		else if (this->step > 0 && this->current > this->stop)	throw_err(type_name<range>() + ": invalid argument error: step > 0 and start > stop");
+		else if (this->step < 0 && this->current < this->stop)	throw_err(type_name<range>() + ": invalid argument error: step < 0 and start < stop");
 	}
+
 
 	template
 	<
-		class Any
+		std::enable_if_t<std::is_arithmetic_v<T>, int> =0
 	>
-	bool operator!= (const Any&) const
-	{
-		return current < stop;
-	}
-
-	template
-	<
-		bool U = false,
-		class A = int,
-		class B = A,
-		class C = A, std::enable_if_t<std::is_arithmetic_v<C>, int> =0
-	>
-	explicit range (A start, B stop, C step = 1) : // Explicit prevents candidate interpretation as copy constructor during class template resolution
-	current(start), stop(stop), step(step)
-	{
-		if (step <= 0)
-			throw_err("Oh no! The step argument for range() should be positive.");
-	}
-
-	template
-	<
-		bool U = false,
-		class A = int,
-		std::enable_if_t<std::is_arithmetic_v<A>, int> =0
-	>
-	explicit range (A stop = 0) :
-	range(0, stop)
+	explicit range (T stop = 0) :
+	range { (T)0, stop }
 	{}
 
-	range (const range& copy) :
-	current(copy.current), stop(copy.stop), step(copy.step)
-	{}
-
-	range (range&& other) noexcept :
-	current(other.current), stop(other.stop), step(other.step)
-	{}
 
 	auto begin () const
 	{
 		return *this;
 	}
 
-	auto& end () const
+
+	auto end () const
 	{
-		return sentinel;
+		return range_detail::unused;
 	}
 
+
 	/* Pretty print */
-	friend std::ostream& operator<< (std::ostream& output, const range& R)
+	template
+	<
+		class Ch,
+		class Tr
+	>
+	friend std::basic_ostream<Ch, Tr>& operator<< (std::basic_ostream<Ch, Tr>& out, const range& r)
 	{
-		return output << type_name<range>() << std::tuple{R.current, R.stop, R.step};
+		return out << type_name<range>() << std::tuple{r.current, r.stop, r.step};
 	}
 };
 
-/* Deduction guides */
-template <bool U = false, class A = int, class B = A, class C = A, std::enable_if_t<std::is_arithmetic_v<C>, int> =0>
-explicit range (A start, B stop, C step = 1) -> range<U, std::common_type_t<A, B, C>>;
 
-template <bool U = false, class A = int, std::enable_if_t<std::is_arithmetic_v<A>, int> =0>
-explicit range (A stop = 0) -> range<U, A>;
+/* Deduction guide */
+template
+<
+	bool IS_UNUSED = false,
+	class T = char,
+	class A,
+	class B,
+	class C = B,
+	class Common = std::common_type_t<A,B,C>,
+	std::enable_if_t<std::is_arithmetic_v<Common>, int> =0
+>
+explicit range (A start, B stop, C step = 1) -> range<IS_UNUSED, Common>;
+
 
 #endif /* RANGE_H */
 
@@ -148,6 +188,8 @@ explicit range (A stop = 0) -> range<U, A>;
 	#include "faces.h"
 	#include "type_stuff.h"
 	#include "basename.h"
+	#include <cmath>			// HUGE_VALL
+
 
 using namespace std;
 int main(int argc, char* argv[])
@@ -196,7 +238,7 @@ int main(int argc, char* argv[])
 	cout << left << setw(20) << 111.5f << range(0,LLONG_MAX,111.5f) << endl;
 	cout << endl << endl;
 
-	auto ranged = [=]
+	[[maybe_unused]] auto ranged = [=]
 	{
 		T result = 0;
 		for (auto i : range(0,N,5))
@@ -206,7 +248,7 @@ int main(int argc, char* argv[])
 		return result;
 	};
 
-	auto traditional = [=]
+	[[maybe_unused]] auto traditional = [=]
 	{
 		T result = 0;
 		for (T i=0; i<N; i+=5)
@@ -214,7 +256,7 @@ int main(int argc, char* argv[])
 		return result;
 	};
 
-	auto stl = [=]
+	[[maybe_unused]] auto stl = [=]
 	{
 		auto r = range(0,N,5);
 		return accumulate(r, r, T(0), [] (T result, T i)
@@ -223,7 +265,7 @@ int main(int argc, char* argv[])
 			});
 	};
 
-	auto for_e = [=]
+	[[maybe_unused]] auto for_e = [=]
 	{
 		auto r = range(0,N,5);
 		T result = 0;
@@ -237,7 +279,7 @@ int main(int argc, char* argv[])
 	std::unordered_map<int, string> names {{0, "Ranged"}, {1, "Traditional"}, {2, "STL Accumulate"}, {3, "STL For Each"}};
 	vector<double> times(names.size());
 	vector<double> score(names.size(),0);
-	for (auto i : range<1>(6))
+	for (auto i : range<1>(12))
 	{
 
 		{
@@ -250,11 +292,20 @@ int main(int argc, char* argv[])
 
 		{
 			tic<0>();
+			T total = for_e();
+			double a = toc<0>();
+			times[3] = a;
+			cout << setw(14 + 4) << right << "stl for_each: " << setw(7 + 4) << times[3] << "\t(odr-using output..." << (void*)(total) <<")" << endl;
+		}
+
+		/*{
+			tic<0>();
 			T total = stl();
 			double a = toc<0>();
 			times[2] = a;
 			cout << setw(14 + 4) << right << "stl accumulate: " << setw(7 + 4) << times[2] << "\t(odr-using output..." << (void*)(total) <<")" << endl;
-		}
+		}*/
+		times[2] = HUGE_VALL;
 
 		{
 			tic<0>();
@@ -263,15 +314,6 @@ int main(int argc, char* argv[])
 			times[0] = a;
 			cout << setw(14 + 4) << right << "Ranged: " << setw(7 + 4) << times[0] << "\t(odr-using output..." << (void*)(total) <<")" << endl;
 		}
-
-		{
-			tic<0>();
-			T total = for_e();
-			double a = toc<0>();
-			times[3] = a;
-			cout << setw(14 + 4) << right << "stl for_each: " << setw(7 + 4) << times[3] << "\t(odr-using output..." << (void*)(total) <<")" << endl;
-		}
-
 
 		cout << setw(14 + 4) << left << "best: " << setw(7 + 4) << right << names[argmin(times)] << endl;
 

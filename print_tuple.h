@@ -6,7 +6,7 @@
 #include "wrap_references.h"
 
 /* Source: http://en.cppreference.com/w/cpp/utility/integer_sequence */
-namespace print_tuple_ns {
+namespace print_tuple_detail {
 	std::string SEP = ", ";
 
 	template<class Ch, class Tr, class Tuple, size_t... I>
@@ -20,7 +20,7 @@ template<class Ch, class Tr, class... Args>
 std::basic_ostream<Ch,Tr>& operator<< (std::basic_ostream<Ch,Tr>& output, const std::tuple<Args...>& tup)
 {
     output << "(";
-    print_tuple_ns::print_tuple(output, tup, std::index_sequence_for<Args...>{});
+    print_tuple_detail::print_tuple(output, tup, std::index_sequence_for<Args...>{});
     return output << ")";
 }
 #endif /* PRINT_TUPLE_H */
