@@ -1,3 +1,3 @@
 # C++
-Screenshot of wrapper syntax
+Screenshot of my wrapper syntax
 ![](little_api.png)
